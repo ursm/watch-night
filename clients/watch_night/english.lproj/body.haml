@@ -1,0 +1,7 @@
+- content_for 'body' do
+  = view :bell_count, :view => 'WatchNight.BellCountView'
+  = view :remaining_time, :view => 'WatchNight.RemainingTimeView'
+
+- view :preference, :pane => :panel, :visible => false, :width => 400 do
+  = text_field_view :limit_time, :bind => {:value => 'WatchNight.timerController.limitTime'}
+  = button_view :title => 'OK', :default => true, :action => 'WatchNight.timerController.hidePreference'
